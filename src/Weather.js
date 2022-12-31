@@ -15,6 +15,8 @@ export default function Weather() {
       humidity: response.data.temperature.humidity,
       feels: response.data.temperature.feels_like,
       description: response.data.condition.description,
+      iconURL: response.data.condition.icon_url,
+      date: "Friday Dec 30 2:07PM",
     });
 
     setReady(true);
@@ -44,15 +46,12 @@ export default function Weather() {
 
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>Wednesday 6:47</li>
-          <li>{weatherData.description}</li>
+          <li>{weatherData.date}</li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
           <div className="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-              alt="cloudy"
-            />
+            <img src={weatherData.iconURL} alt={weatherData.description} />
 
             <div className="tempElement">
               {Math.round(weatherData.temperature)}
@@ -62,7 +61,7 @@ export default function Weather() {
           <div className="col-6">
             <ul>
               <li>
-                Feels Like: {weatherData.feels}
+                Feels Like: {Math.round(weatherData.feels)}
                 °F
               </li>
               <li>Humidity: {weatherData.humidity}%</li>
