@@ -26,7 +26,7 @@ export default function WeatherForecastDay(props) {
         src={props.data.condition.icon_url}
         alt={props.data.condition.description}
       />
-      <div className="WeatherForecast-Description">
+      <div className="WeatherForecast-Description text-capitalize">
         {props.data.condition.description}
       </div>
       <div className="WeatherForecast-Temp">
