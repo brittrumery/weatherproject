@@ -1,11 +1,24 @@
 .WeatherForecast {
   text-align: center;
+
+  font-size: small;
+  padding-top: 20px;
 }
 
 .WeatherForecast-Icon {
   padding-bottom: 0px;
+  width: 50px;
+  height: 50px;
 }
 
 .WeatherForecast-Temp-Min {
   opacity: 0.55;
+}
+
+.WeatherForecast-Description {
+  font-style: italic;
+}
+
+.WeatherForecast-day {
+  font-weight: bold;
 }
